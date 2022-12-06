@@ -6,7 +6,7 @@ import general as g
 packet = g.read_file()
 
 
-def get_payload(packet: str, marker_length: int) -> int:
+def get_payload_index(packet: str, marker_length: int) -> int:
     """Quick put together solution"""
     for count, _ in enumerate(packet):
         slice = packet[count:count + marker_length]
@@ -23,10 +23,10 @@ def get_payload(packet: str, marker_length: int) -> int:
 
 def main():
     # part one, start-of-packet marker
-    print(get_payload(packet, 4))
+    print(get_payload_index(packet, 4))
     
     # part 2, start-of-message marker
-    print(get_payload(packet, 14))
+    print(get_payload_index(packet, 14))
 
 
 main()
